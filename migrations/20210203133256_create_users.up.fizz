@@ -1,0 +1,11 @@
+create_table("users") {
+	t.Column("id", "uuid", {primary: true})
+	t.Column("chat_id", "string", {})
+	t.Column("fen", "string", {})
+	t.Column("history", "string", {"null": true})
+	t.Column("side", "integer", {"null": true})
+	t.Column("orientation", "integer", {"null": true})
+	t.Timestamps()
+}
+
+add_index("users", "chat_id", {"unique": true})
